@@ -14,7 +14,7 @@ import com.google.inject.AbstractModule;
 public class ParserModule extends AbstractModule {
     
     public void configure() {
-        bind(Parser.class).to(BytecodeParser.class);
+        //bind(Parser.class).to(BytecodeParser.class);
     }
     
 }
