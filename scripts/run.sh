@@ -4,7 +4,7 @@
 # Script for running JBSC
 #
 
-PROJECT_DIR=/home/michal/Nauka/magisterka/jbsc/JavaBytecodeStaticChecker/
+PROJECT_DIR=.
 
 cd $PROJECT_DIR
 
