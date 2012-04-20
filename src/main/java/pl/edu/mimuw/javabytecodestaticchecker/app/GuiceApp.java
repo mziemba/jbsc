@@ -1,24 +1,41 @@
-/**
- * GuiceApp class
- * @version 1.0.0
- * @date 2012-02-03, 19:25
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.app;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Module;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * Main Guice application configuration.
  *
+ * @author M. Ziemba
  */
-public class GuiceApp implements App {
+public abstract class GuiceApp implements App {
+
+    /**
+     *
+     * @return
+     */
+    protected abstract Iterable<? extends Module> getGuiceModules();
+
+    protected void guiceStart(Injector injector,
+                              final CountDownLatch stopWaitLatch) {
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                GuiceApp.this.stop();
+                stopWaitLatch.countDown();
+            }
+        });
+    }
 
     @Override
-    public void start() {
-
+    public void start(CountDownLatch stopWaitLatch) {
+        Injector injector = Guice.createInjector(getGuiceModules());
+        guiceStart(injector, stopWaitLatch);
     }
 
     @Override
     public void stop() {
-
     }
 }

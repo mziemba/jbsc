@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]
+then
+    echo "usage: $0 <option>"
+    exit 0
+fi
+
+case $1 in
+    "clean") echo "cleaning"
+             rm *.log
+             rm *.toc
+             rm *.aux
+             rm *.pdf
+             ;;
+    "make") echo "building"
+            pdflatex praca.tex
+            ;;
+    *) echo "unknown option"
+       ;;
+esac
+

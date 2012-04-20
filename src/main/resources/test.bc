@@ -1,0 +1,4 @@
+iload_1
+iload_2
+iadd
+istore_3

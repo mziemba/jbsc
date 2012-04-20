@@ -1,11 +1,12 @@
 /**
- * Main class
+ * Main
  * @author M. Ziemba
  * @version 1.0.0
  * 2011-12-05, 19:30
  */
 package pl.edu.mimuw.javabytecodestaticchecker.main;
 
+import java.util.concurrent.CountDownLatch;
 import org.apache.log4j.Logger;
 import pl.edu.mimuw.javabytecodestaticchecker.app.App;
 import pl.edu.mimuw.javabytecodestaticchecker.app.JbscApp;
@@ -22,13 +23,10 @@ public class Main {
         log.info("----------Starting JavaBytecodeChecker----------");
         App app = new JbscApp();
         try {
-            Runtime.getRuntime().addShutdownHook(new Thread() {
-               @Override
-               public void run() {
-                   log.info("Executing application shutdown hook");
-               }
-            });
-            app.start();
+            CountDownLatch stopWaitLatch = new CountDownLatch(1);
+            app.start(stopWaitLatch);
+            stopWaitLatch.await();
+            app.stop();
         } catch (Throwable exception) {
             log.error("Exception in main()", exception);
             app.stop();

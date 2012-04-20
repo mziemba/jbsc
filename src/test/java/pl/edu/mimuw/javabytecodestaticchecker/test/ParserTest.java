@@ -25,10 +25,10 @@ public class ParserTest extends JbscTestCase {
     private static final Logger log = Logger.getLogger(ParserTest.class);
     private Parser parser;
     private static final String TEST_CODE =
-            "0: iload_1\n"
-            + "1: iload_2\n"
-            + "2: iadd\n"
-            + "3: istore_3";
+            "iload_1\n"
+            + "iload_2\n"
+            + "iadd\n"
+            + "istore_3";
     private static final int TEST_CODE_LINES = 4;
     private static final String TEST_EMPTY_CODE = "";
 

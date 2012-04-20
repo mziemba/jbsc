@@ -1,19 +1,23 @@
-/**
- * App interface
- * @version 1.0.0
- * @date 2012-02-03, 19:10
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.app;
+
+import java.util.concurrent.CountDownLatch;
 
 /**
  * Interface of a single application class.
  *
+ * @author M. Ziemba
  */
 public interface App {
 
-    void start();
+    /**
+     * Starts application.
+     *
+     * @param stopWaitLatch synchronization aid
+     */
+    void start(CountDownLatch stopWaitLatch);
 
+    /**
+     * Stops application.
+     */
     void stop();
-
 }

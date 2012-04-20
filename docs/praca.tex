@@ -1,0 +1,176 @@
+\documentclass{pracamgr}
+
+\usepackage[polish]{babel}
+\RequirePackage{longtable}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{color,graphicx}
+
+
+\author{Michał Ziemba}
+
+\nralbumu{237954}
+
+\title{Serwis Submit++}
+
+\tytulang{The Submit++ service}
+
+\kierunek{Informatyka}
+
+\opiekun{dr Aleksy Schubert\\
+  Instytut Informatyki\\
+  }
+
+\date{Czerwiec 2012}
+
+\dziedzina{ 
+11.3 Informatyka
+}
+
+\klasyfikacja{D. Software}
+
+\keywords{Serwis, zadanie, rozwiązanie, MIMUW}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  W~pracy przedstawiono opis i dokumentację narzędzia JBSC, służącego do
+  analizy statycznej bajtkodu Javy. Jest to wtyczka do środowiska programistycznego
+  Eclipse, korzystająca z frameworku Umbra. Umożliwia proste wykrywanie potencjalnie
+  niebezpiecznych konstrukcji w kodzie bez jego uruchamiania.
+\end{abstract}
+
+\tableofcontents
+
+\chapter*{Wprowadzenie}
+\addcontentsline{toc}{chapter}{Wprowadzenie}
+
+    Analiza statyczna kodu polega na badaniu własności programu bez jego uruchamiania,
+    w przecwieństwie do analizy dynamicznej. 
+
+    Motywacja
+    Ogólnie pojęta analiza statyczna ma coraz większe zastosowanie w procesie wytwarzania wolnego od błędów
+    i bezpiecznego kodu. Analiza statyczna kodu wykonywalnego ma zastosowanie w systemach osadzonych, gdzie
+    nie ma dostępu do źródeł. Także w przypadku systemów których źródła nie są po prostu wolnodostępne.
+
+Dłuższy opis działania
+Java Bytecode Static Checker jest wtyczką do Eclipsa 
+
+Opis rozdziałów
+
+\chapter{Kod bajtowy}\label{r:bytecode}
+
+    Kod bajtowy jest formą instrukcji, wykonywanych przez maszynę wirtualną Javy. Każdy kod instrukcji
+    ma długość jednego bajta, przy czym niektóre instrukcje wymagają parametrów.
+
+    Specjalne i zarezerwowane instrukcje:
+    \begin{itemize}
+        \item 
+        \item
+    \end{itemize}
+    
+    Instrukcje kodu bajtowego można podzielić na następujące grupy:
+    \begin{itemize}
+        \item
+    \end{itemize}
+    
+    Przedrostki i przyrostki
+    
+    Generowanie kodu bajtowego, javac (przykład użycia javac -d}
+    
+    Przykład kodu bajtowego?
+
+\chapter{Analiza statyczna}\label{r:staticanalysis}
+
+    Analiza statyczna polega na badaniu kodu źródłowego bez jego uruchamiania. Pozwala wykryć potencjalnie
+    niebezpieczne konstrukcje w kodzie. Jednak fakt niewykrycia błędu na poziomie analizy statycznej nie czyni
+    kodu bezbłędnym.
+    
+    Możliwości i ograniczenia (zalety)
+    Zalety korzystania z narzędzi do analizy statycznej:
+    \begin{itemize}
+        \item Sprawdzenia wykonywane przez narzędzie, w odróżnieniu od sprawdzenia programisty,
+              pozwalają wykryć potencjalne błędy w miejscach mniej interesujących, które mogły zostać pominięte
+              lub przeoczone przez programistę.
+        \item Analiza statyczna daje możliwość wykrycia problemów u ich źródła. Pozwala uniknąć sytuacji,
+              kiedy w trakcie uruchamiania programu otrzymujemy błąd przepełnienia buforu, a nie wiemy dokładnie
+              kiedy, gdzie i dlaczego to przepełnienie nastąpiło.
+        \item Błędy są znajdowane na wczesnym etapie rozwijania kodu. To daje możliwość uniknięcia być może
+              kosztownego usuwania tego błędu na późniejszym etapie.
+    \end{itemize}
+    
+    Najpoważniejszym zarzutem, który pojawia się pod adresem narzędzi do analizy statycznej jest fakt, że
+    produkują zbyt wiele ostrzeżeń, z których większość jest nieprzydatnych. Takie fałszywe ostrzeżenia nazywamy
+    \textit{false negatives}.
+    
+    Zakres analizy statycznej
+    Przy pomocy analizy statycznej można wykonywać następujące sprawdzenia:
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    
+    Etapy analizy
+    
+    Co można sprawdzać
+    
+    False positives, false negatives
+    
+    Przykładowe narzędzia i ch krótki opis:
+    \begin{itemize}
+        \item lint
+        \item findbugs
+        \item escjava2
+    \end{itemize}
+    
+    
+\chapter{Integracja}\label{r:integration}
+
+    Co to jest Umbra?
+
+    Połączenie z frameworkiem Umbra
+
+\chapter{Funkcjonalność systemu}\label{r:funkcjonalnosc}
+
+\section{Wprowadzenie}
+
+
+\chapter{Środowisko systemu}\label{r:srodowisko}
+
+\section{Serwer}
+
+
+\chapter{Budowa systemu}\label{r:budowa}
+
+\section{Architektura systemu}
+
+
+
+
+\chapter{Podsumowanie}\label{r:podsumowanie}
+
+
+\appendix
+
+\chapter{Dostarczone dokumenty}
+
+Obiekty dostarczone w ramach pracy licencjackiej to:
+\begin{itemize}
+\item dokument z treścią pracy licencjackiej
+\item płyta CD
+\end{itemize}
+
+\chapter{Spis zawartości płyty CD}
+
+
+
+
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Bibliografia}
+
+
+\end{thebibliography}
+
+
+\end{document}
+

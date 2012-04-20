@@ -13,7 +13,15 @@ package pl.edu.mimuw.javabytecodestaticchecker.lang;
 public class BytecodeInstructionBuilder {
 
     public static BytecodeInstruction build(String instruction) {
-        return new LoadInstruction("arg1 arg2");
+        if (instruction.matches("(.*)load(.*)")) {
+            return new LoadInstruction(instruction);
+        } else if (instruction.matches("(.*)store(.*)")) {
+            return new StoreInstruction(instruction);
+        } else if (instruction.matches("(.*)add(.*)")) {
+            return new ArithmeticInstruction(instruction);
+        } else {
+            return new LoadInstruction("arg1 arg2");
+        }
     }
 
     public static InstructionType mapInstructionType(String stringType) {
