@@ -1,9 +1,3 @@
-/**
- * InstructionType class
- * @version 1.0.0
- * 2012-02-11, 17:13
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.lang;
 
 /**
@@ -17,6 +11,7 @@ package pl.edu.mimuw.javabytecodestaticchecker.lang;
  *  * d double,
  *  * a reference.
  *
+ * @author M. Ziemba
  */
 public enum InstructionType {
 

@@ -1,9 +1,3 @@
-/**
- * InstructionBuilderTest class
- * @version 1.0.0
- * 2012-02-11, 17:05
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.test;
 
 import junit.framework.TestCase;
@@ -14,6 +8,7 @@ import pl.edu.mimuw.javabytecodestaticchecker.lang.StoreInstruction;
 /**
  * Tests for building instruction objects from Strings.
  *
+ * @author M. Ziemba
  */
 public class InstructionBuilderTest extends TestCase {
 

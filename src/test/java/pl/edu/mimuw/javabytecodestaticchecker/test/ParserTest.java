@@ -1,9 +1,3 @@
-/**
- * ParserTest class
- * @version 1.0.0
- * @date 2012-02-03, 20:29
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.test;
 
 import java.util.Iterator;
@@ -17,6 +11,7 @@ import pl.edu.mimuw.javabytecodestaticchecker.parser.Parser;
 /**
  * Tests for Parser module.
  *
+ * @author M. Ziemba
  */
 public class ParserTest extends JbscTestCase {
 

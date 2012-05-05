@@ -6,8 +6,10 @@ import com.google.inject.Module;
 import com.google.inject.PrivateModule;
 import java.util.concurrent.CountDownLatch;
 import org.apache.log4j.Logger;
+import pl.edu.mimuw.javabytecodestaticchecker.bugs.BugReporter;
+import pl.edu.mimuw.javabytecodestaticchecker.bugs.ConsoleBugReporter;
 import pl.edu.mimuw.javabytecodestaticchecker.checker.CheckerService;
-import pl.edu.mimuw.javabytecodestaticchecker.checker.CheckerServiceImpl;
+import pl.edu.mimuw.javabytecodestaticchecker.checker.DefaultCheckerService;
 import pl.edu.mimuw.javabytecodestaticchecker.input.BcelClassLoader;
 import pl.edu.mimuw.javabytecodestaticchecker.input.ClassLoader;
 import pl.edu.mimuw.javabytecodestaticchecker.parser.BytecodeParser;
@@ -18,7 +20,7 @@ import pl.edu.mimuw.javabytecodestaticchecker.parser.Parser;
  *
  * @author M. Ziemba
  */
-public class JbscApp extends GuiceApp {
+public class JbscApp extends BaseApp {
 
     private CheckerService checkerService;
 
@@ -29,6 +31,7 @@ public class JbscApp extends GuiceApp {
         return ImmutableList.of(
                     new FileLoaderModule(),
                     new ParserModule(),
+                    new BugReporterModule(),
                     new CheckerModule()
                 );
     }
@@ -67,10 +70,18 @@ public class JbscApp extends GuiceApp {
         }
     }
 
+    private class BugReporterModule extends PrivateModule {
+        @Override
+        protected void configure() {
+            bind(BugReporter.class).to(ConsoleBugReporter.class);
+            expose(BugReporter.class);
+        }
+    }
+
     private class CheckerModule extends PrivateModule {
         @Override
         protected void configure() {
-            bind(CheckerService.class).to(CheckerServiceImpl.class);
+            bind(CheckerService.class).to(DefaultCheckerService.class);
             expose(CheckerService.class);
         }
     }

@@ -1,13 +1,9 @@
-/**
- * @version 1.0.0
- * @date 2012-01-30, 21:13
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.input;
 
 /**
  * Interface.
  *
+ * @author M. Ziemba
  */
 public interface InputLoader {
 

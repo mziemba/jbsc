@@ -1,13 +1,10 @@
-/**
- *
- */
 package pl.edu.mimuw.javabytecodestaticchecker.lang;
 
 import java.util.List;
 
 /**
  *
- *
+ * @author M. Ziemba
  */
 public abstract class BytecodeInstruction {
 

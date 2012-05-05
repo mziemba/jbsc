@@ -1,9 +1,3 @@
-/**
- * Main
- * @author M. Ziemba
- * @version 1.0.0
- * 2011-12-05, 19:30
- */
 package pl.edu.mimuw.javabytecodestaticchecker.main;
 
 import java.util.concurrent.CountDownLatch;
@@ -12,8 +6,10 @@ import pl.edu.mimuw.javabytecodestaticchecker.app.App;
 import pl.edu.mimuw.javabytecodestaticchecker.app.JbscApp;
 
 /**
- * Main application class.
+ * Main application class. It creates an instance of JbscApp
+ * and starts it.
  *
+ * @author M. Ziemba
  */
 public class Main {
 
@@ -25,7 +21,7 @@ public class Main {
         try {
             CountDownLatch stopWaitLatch = new CountDownLatch(1);
             app.start(stopWaitLatch);
-            stopWaitLatch.await();
+            //stopWaitLatch.await();
             app.stop();
         } catch (Throwable exception) {
             log.error("Exception in main()", exception);

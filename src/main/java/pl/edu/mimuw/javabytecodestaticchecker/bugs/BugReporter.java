@@ -1,12 +1,14 @@
 package pl.edu.mimuw.javabytecodestaticchecker.bugs;
 
-import com.google.inject.Singleton;
-
 /**
+ * Class holding information about found bugs through the
+ * execution of various analyses.
  *
  * @author M. Ziemba
  */
-@Singleton
-public class BugReporter {
+public interface BugReporter {
 
+    void addBug(String bug);
+
+    void printAllBugs();
 }

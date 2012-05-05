@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 public class BcelClassLoader implements ClassLoader {
     private static final Logger log = Logger.getLogger(BcelClassLoader.class);
 
+    @Override
     public void loadClass(String className) {
         try {
             JavaClass clazz = Repository.lookupClass(className);

@@ -1,9 +1,3 @@
-/**
- * BytecodeParser class
- * @version 1.0.0
- * @date 2012-02-03, 20:43
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.parser;
 
 import java.util.ArrayList;
@@ -14,6 +8,7 @@ import pl.edu.mimuw.javabytecodestaticchecker.lang.BytecodeInstructionBuilder;
 /**
  * Parser for Java Bytecode.
  *
+ * @author M. Ziemba
  */
 public class BytecodeParser implements Parser {
 

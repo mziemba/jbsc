@@ -1,9 +1,3 @@
-/**
- * LoadInstruction class
- * @version 1.0.0
- * 2012-02-03, 21:32
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.lang;
 
 import java.util.ArrayList;
@@ -14,6 +8,7 @@ import org.apache.log4j.Logger;
 /**
  * Class representing instructions: iload, aload, etc.
  *
+ * @author M. Ziemba
  */
 public class LoadInstruction extends BytecodeInstruction {
 

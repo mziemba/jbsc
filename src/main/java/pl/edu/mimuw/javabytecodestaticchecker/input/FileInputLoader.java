@@ -1,8 +1,3 @@
-/**
- * @version 1.0.0
- * @date 2012-01-30, 21:15
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.input;
 
 import java.io.*;
@@ -11,6 +6,7 @@ import org.apache.log4j.Logger;
 /**
  * Loads data from given file.
  *
+ * @author M. Ziemba
  */
 public class FileInputLoader implements InputLoader {
 

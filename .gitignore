@@ -1,1 +1,4 @@
-/target/
+target/
+docs/praca.aux
+docs/praca.log
+docs/praca.toc

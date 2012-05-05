@@ -1,9 +1,3 @@
-/**
- * JbscTestCase class
- * @version 1.0.0
- * @date 2012-02-03, 20:28
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.test;
 
 import junit.framework.TestCase;
@@ -11,6 +5,7 @@ import junit.framework.TestCase;
 /**
  * Abstract class for JBSC test cases.
  *
+ * @author M. Ziemba
  */
 public abstract class JbscTestCase extends TestCase {
 

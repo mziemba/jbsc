@@ -11,9 +11,10 @@ case $1 in
              rm *.log
              rm *.toc
              rm *.aux
-             rm *.pdf
+#             rm *.pdf
              ;;
     "make") echo "building"
+            pdflatex praca.tex
             pdflatex praca.tex
             ;;
     *) echo "unknown option"

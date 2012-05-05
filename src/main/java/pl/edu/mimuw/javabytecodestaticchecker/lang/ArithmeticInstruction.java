@@ -1,9 +1,3 @@
-/**
- * ArithmeticInstruction class
- * @version 1.0.0
- * 2012-02-11, 19:51
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.lang;
 
 import java.util.ArrayList;
@@ -14,6 +8,7 @@ import org.apache.log4j.Logger;
 /**
  * Class representing arithmetic bytecode instructions, such as iadd, imul.
  *
+ * @author M. Ziemba
  */
 public class ArithmeticInstruction extends BytecodeInstruction {
 

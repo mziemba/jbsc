@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  *
  * @author M. Ziemba
  */
-public abstract class GuiceApp implements App {
+public abstract class BaseApp implements App {
 
     /**
      *
@@ -23,7 +23,7 @@ public abstract class GuiceApp implements App {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
-                GuiceApp.this.stop();
+                BaseApp.this.stop();
                 stopWaitLatch.countDown();
             }
         });

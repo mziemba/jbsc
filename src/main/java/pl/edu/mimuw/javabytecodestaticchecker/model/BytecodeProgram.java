@@ -5,7 +5,7 @@ import pl.edu.mimuw.javabytecodestaticchecker.lang.BytecodeInstruction;
 
 /**
  *
- *
+ * @author M. Ziemba
  */
 public class BytecodeProgram {
 

@@ -1,14 +1,9 @@
-/**
- * BytecodeInstructionBuilder class
- * @version 1.0.0
- * 2012-02-11, 17:45
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.lang;
 
 /**
  * Builder class for bytecode instructions.
  *
+ * @author M. Ziemba
  */
 public class BytecodeInstructionBuilder {
 

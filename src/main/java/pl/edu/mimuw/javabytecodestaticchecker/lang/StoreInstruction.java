@@ -1,9 +1,3 @@
-/**
- * StoreInstruction class
- * @version 1.0.0
- * @date 2012-02-10, 18:17
- * @author M. Ziemba
- */
 package pl.edu.mimuw.javabytecodestaticchecker.lang;
 
 import java.util.ArrayList;
@@ -16,7 +10,7 @@ import org.apache.log4j.Logger;
  * on operand stack. Amongst these are:
  *  * store
  *
- *
+ * @author M. Ziemba
  */
 public class StoreInstruction extends BytecodeInstruction {
 
