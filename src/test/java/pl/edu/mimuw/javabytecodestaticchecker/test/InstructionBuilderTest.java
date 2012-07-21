@@ -1,6 +1,7 @@
 package pl.edu.mimuw.javabytecodestaticchecker.test;
 
-import junit.framework.TestCase;
+import junit.framework.Assert;
+import org.junit.Test;
 import pl.edu.mimuw.javabytecodestaticchecker.lang.InstructionType;
 import pl.edu.mimuw.javabytecodestaticchecker.lang.LoadInstruction;
 import pl.edu.mimuw.javabytecodestaticchecker.lang.StoreInstruction;
@@ -10,19 +11,21 @@ import pl.edu.mimuw.javabytecodestaticchecker.lang.StoreInstruction;
  *
  * @author M. Ziemba
  */
-public class InstructionBuilderTest extends TestCase {
+public class InstructionBuilderTest {
 
+    @Test
     public void testCreateStoreInstruction() {
         String instruction = "astore_1";
         StoreInstruction storeInstruction = new StoreInstruction(instruction);
-        assertEquals(0, storeInstruction.getArguments().size());
-        assertEquals(InstructionType.REFERENCE, storeInstruction.getType());
+        Assert.assertEquals(0, storeInstruction.getArguments().size());
+        Assert.assertEquals(InstructionType.REFERENCE, storeInstruction.getType());
     }
 
+    @Test
     public void testCreateLoadInstruction() {
         String instruction = "iload_0";
         LoadInstruction loadInstruction = new LoadInstruction(instruction);
-        assertEquals(InstructionType.INTEGER, loadInstruction.getType());
-        assertEquals(0, loadInstruction.getArguments().size());
+        Assert.assertEquals(InstructionType.INTEGER, loadInstruction.getType());
+        Assert.assertEquals(0, loadInstruction.getArguments().size());
     }
 }

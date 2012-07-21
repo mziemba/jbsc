@@ -6,6 +6,7 @@ import org.apache.bcel.classfile.Method;
 import org.apache.bcel.generic.ConstantPoolGen;
 import org.apache.bcel.generic.MethodGen;
 import org.apache.log4j.Logger;
+import pl.edu.mimuw.javabytecodestaticchecker.context.ClassContext;
 
 /**
  * Class loader using BCEL API.
@@ -16,7 +17,8 @@ public class BcelClassLoader implements ClassLoader {
     private static final Logger log = Logger.getLogger(BcelClassLoader.class);
 
     @Override
-    public void loadClass(String className) {
+    public ClassContext loadClass(String className) {
+        ClassContext context = null;
         try {
             JavaClass clazz = Repository.lookupClass(className);
             Method[] methods = clazz.getMethods();
@@ -33,5 +35,6 @@ public class BcelClassLoader implements ClassLoader {
             log.debug("Loaded class: " + clazz);
             //clazz.dump(clazz.getClassName() + "_.class");
         } catch(Exception e) { e.printStackTrace(); }
+        return context;
     }
 }

@@ -10,8 +10,8 @@ import pl.edu.mimuw.javabytecodestaticchecker.bugs.BugReporter;
 import pl.edu.mimuw.javabytecodestaticchecker.bugs.ConsoleBugReporter;
 import pl.edu.mimuw.javabytecodestaticchecker.checker.CheckerService;
 import pl.edu.mimuw.javabytecodestaticchecker.checker.DefaultCheckerService;
-import pl.edu.mimuw.javabytecodestaticchecker.input.BcelClassLoader;
 import pl.edu.mimuw.javabytecodestaticchecker.input.ClassLoader;
+import pl.edu.mimuw.javabytecodestaticchecker.input.ClassLoaderProvider;
 import pl.edu.mimuw.javabytecodestaticchecker.parser.BytecodeParser;
 import pl.edu.mimuw.javabytecodestaticchecker.parser.Parser;
 
@@ -57,7 +57,7 @@ public class JbscApp extends BaseApp {
     private class FileLoaderModule extends PrivateModule {
         @Override
         protected void configure() {
-            bind(ClassLoader.class).to(BcelClassLoader.class);
+            bind(ClassLoader.class).toProvider(ClassLoaderProvider.class);
             expose(ClassLoader.class);
         }
     }

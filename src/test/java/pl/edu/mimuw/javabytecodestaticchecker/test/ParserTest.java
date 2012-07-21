@@ -2,7 +2,11 @@ package pl.edu.mimuw.javabytecodestaticchecker.test;
 
 import java.util.Iterator;
 import java.util.List;
+import junit.framework.Assert;
 import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import pl.edu.mimuw.javabytecodestaticchecker.lang.BytecodeInstruction;
 import pl.edu.mimuw.javabytecodestaticchecker.parser.BytecodeParser;
 import pl.edu.mimuw.javabytecodestaticchecker.parser.ParseException;
@@ -13,7 +17,7 @@ import pl.edu.mimuw.javabytecodestaticchecker.parser.Parser;
  *
  * @author M. Ziemba
  */
-public class ParserTest extends JbscTestCase {
+public class ParserTest {
 
     //--------------------------------FIELDS-----------------------------------
 
@@ -27,40 +31,42 @@ public class ParserTest extends JbscTestCase {
     private static final int TEST_CODE_LINES = 4;
     private static final String TEST_EMPTY_CODE = "";
 
-    /**
-     * Prepares testing environment.
-     */
-    @Override
-    protected void setUp() {
+    //----------------------------TEST ENVIRONMENT-----------------------------
+
+    @Before
+    public void setUp() {
         parser = new BytecodeParser();
     }
 
-    @Override
-    protected void tearDown() {
+    @After
+    public void tearDown() {
     }
 
     //----------------------------------TESTS----------------------------------
 
+    @Test
     public void testParseEmptyInput() {
         log.info("Running testParseEmptyInput");
         try {
             List<BytecodeInstruction> instructions =
                     parser.parse(TEST_EMPTY_CODE);
-            assertNull("Abstract Syntax Tree is not null as it should be",
+            Assert.assertNull("Abstract Syntax Tree is not null as it should be",
                     instructions);
             String input = null;
             instructions = parser.parse(input);
-            assertNull("Abstract Syntax Tree is not null as it should be",
+            Assert.assertNull("Abstract Syntax Tree is not null as it should be",
                     instructions);
         } catch (ParseException exception) {
-            fail("Unexpected parse exception");
+            Assert.fail("Unexpected parse exception");
         }
     }
 
+    @Test
     public void testParseBadSyntaxInput() {
         log.info("Running testParseBadSyntaxInput");
     }
 
+    @Test
     public void testParseValidInput() {
         log.info("Running testParseValidInput");
         try {
@@ -70,9 +76,9 @@ public class ParserTest extends JbscTestCase {
             while (iter.hasNext()) {
                 log.debug("Element: " + iter.next());
             }
-            assertEquals(TEST_CODE_LINES, instructions.size());
+            Assert.assertEquals(TEST_CODE_LINES, instructions.size());
         } catch (ParseException exception) {
-            fail("Unexpected parse exception");
+            Assert.fail("Unexpected parse exception");
         }
     }
 }
